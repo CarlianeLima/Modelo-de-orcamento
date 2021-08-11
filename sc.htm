@@ -1,0 +1,847 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Transposição de saldo - Sistema FIEC</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;900&display=swap" rel="stylesheet">
+
+
+    <style>
+
+BODY {
+	font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 10px;
+    color: black;
+    width: 95%;
+    text-align: center;
+    justify-content: center;
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+}
+
+.Scroll {
+SCROLLBAR-FACE-COLOR: #DEDEDE;
+SCROLLBAR-HIGHLIGHT-COLOR: #DEDEDE;
+SCROLLBAR-SHADOW-COLOR: #ffffff;
+SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+SCROLLBAR-ARROW-COLOR:  #ffffff;
+SCROLLBAR-TRACK-COLOR: #ffffff;
+SCROLLBAR-DARKSHADOW-COLOR: #DEDEDE;
+
+}
+
+.TarjaTopoMenu {
+	text-decoration: none;
+	height: 6px;
+	background-image: url('apmenu-right.jpg');
+
+
+
+
+}
+
+.TarjaMiniMenu {
+	text-decoration: none;
+	height: 1px;
+	background-image: url('apmenu-right.jpg');
+}
+.texto {
+	font-family: 'Source Sans Pro', sans-serif; 
+	font-size: 12px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: normal;
+}
+.titulo {
+
+	font-family: 'Source Sans Pro', sans-serif; 
+	font-size: 16px;
+	color: #19167D;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.TituloMenor {
+
+
+	font-family: 'Source Sans Pro', sans-serif; 
+	font-size: 12px;
+	color: #19167D;
+	text-decoration: none;
+	font-weight: bold;
+	TEXT-ALIGN: bold;
+}
+
+.Botoes {
+	font-family: 'Source Sans Pro', sans-serif; 
+	font-size: 10px;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 2px;
+	padding: 2px;
+	cursor: hand;
+	border: 1px outset #000000;
+}
+
+.TarjaTopoMenu {
+	text-decoration: none;
+	height: 6px;
+	background-image: url('apmenu-right.jpg');
+}
+
+DIV {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt
+}
+TABLE {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt
+}
+TD {
+	FONT-FAMILY: 'Source Sans Pro', sans-serif;; FONT-SIZE: 11pt
+}
+FORM {
+	MARGIN: 0px
+}
+A:link {
+	COLOR: #2d2dcb
+}
+A:visited {
+	COLOR: #2d2dcb
+}
+A:active {
+	COLOR: #2d2dcb
+}
+A:hover {
+	COLOR: #2d2dcb
+}
+INPUT {
+	FONT-FAMILY: 'Source Sans Pro', sans-serif; ; FONT-SIZE: 12px
+}
+SELECT {
+	FONT-FAMILY: 'Source Sans Pro', sans-serif; ; FONT-SIZE: 12px
+}
+.Grey {
+	BACKGROUND-COLOR: #f7f7f7
+}
+.NormalGrey {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px
+}
+.NormalRedBold {
+	COLOR: #ff0000; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.NormalCommentField {
+	FONT-FAMILY: Courier; FONT-SIZE: 12px
+}
+.NormalBold {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: bold
+}
+.Mini {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px;
+}
+.MiniError {
+	COLOR: #ff3333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px
+}
+.MidleBold {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.Small {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px
+}
+.SmallRight {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-ALIGN: right
+}
+.SmallBold {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.SmallBoldHeight {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; LINE-HEIGHT: 17px
+}
+.TitleSmall {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 18px; FONT-WEIGHT: normal; LINE-HEIGHT: 20px; TEXT-ALIGN: left
+}
+.TitleSmallRight {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 18px; FONT-WEIGHT: normal; LINE-HEIGHT: 20px; TEXT-ALIGN: right
+}
+.TitleSmallCenter {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 18px; FONT-WEIGHT: normal; LINE-HEIGHT: 20px; TEXT-ALIGN: center
+}
+.TitleSmallSalmon {
+	COLOR: #ffbfbf; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 18px; FONT-WEIGHT: normal; LINE-HEIGHT: 20px
+}
+.TitleMedium {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 22px; FONT-WEIGHT: normal; LINE-HEIGHT: 24px; TEXT-ALIGN: left
+}
+.TitleMediumRight {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 22px; FONT-WEIGHT: normal; LINE-HEIGHT: 24px; TEXT-ALIGN: right
+}
+.TitleMediumCenter {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 22px; FONT-WEIGHT: normal; LINE-HEIGHT: 24px; TEXT-ALIGN: center
+}
+.TitleBig {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 24px; FONT-WEIGHT: normal; LINE-HEIGHT: 26px; TEXT-ALIGN: left
+}
+.TitleBigRight {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 24px; FONT-WEIGHT: normal; LINE-HEIGHT: 26px; TEXT-ALIGN: right
+}
+.TitleBigCenter {
+	COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 24px; FONT-WEIGHT: normal; LINE-HEIGHT: 26px; TEXT-ALIGN: center
+}
+.TitlePopupWhite {
+	COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: normal; LINE-HEIGHT: 18px; TEXT-ALIGN: right
+}
+.TableColumnTitle {
+	BACKGROUND-COLOR: #E5E5E5; COLOR: #F7F7F7; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; VERTICAL-ALIGN: top
+}
+.TableColumnTitleCenter {
+	BACKGROUND-COLOR: #ffddcb; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-ALIGN: center; VERTICAL-ALIGN: top
+}
+.TableRowGrey {
+	BACKGROUND-COLOR: #f7f7f7; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; VERTICAL-ALIGN: top
+}
+.TableRowGreyCenter {
+	BACKGROUND-COLOR: #f7f7f7; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-ALIGN: center; VERTICAL-ALIGN: top
+}
+.TableRowGreyForm {
+	BACKGROUND-COLOR: #f7f7f7; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; HEIGHT: 22px
+}
+.TableRowErrorForm {
+	BACKGROUND-COLOR: #ff3333; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; HEIGHT: 22px
+}
+.TableRowGreyTitelMedium {
+	BACKGROUND-COLOR: #f7f7f7; COLOR: #979797; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 19px; VERTICAL-ALIGN: top
+}
+.TableRowGreyDark {
+	BACKGROUND-COLOR: #ececec; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; VERTICAL-ALIGN: top
+}
+.TableRowGreyDarkMini {
+	BACKGROUND-COLOR: #ececec; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; VERTICAL-ALIGN: top
+}
+.TableRowGreyMini {
+	BACKGROUND-COLOR: #f7f7f7; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; VERTICAL-ALIGN: top
+}
+.TableRowSalmon {
+	BACKGROUND-COLOR: #E4E4E4; COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; VERTICAL-ALIGN: top
+}
+.TableRowSalmonCenter {
+	BACKGROUND-COLOR: #fff2eb; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-ALIGN: center; VERTICAL-ALIGN: top
+}
+.TableRowSalmonForm {
+	BACKGROUND-COLOR: #fff2eb; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; HEIGHT: 22px
+}
+.TableRowSalmonFormMini {
+	BACKGROUND-COLOR: #E4E4E4; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px
+}
+.TableRowWhite {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; VERTICAL-ALIGN: top
+}
+.TableRowWhiteCenter {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-ALIGN: center; VERTICAL-ALIGN: top
+}
+.TableRowWhiteForm {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; HEIGHT: 22px
+}
+.TableRowWhiteMini {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; VERTICAL-ALIGN: top
+}
+.TableRowWhiteMini2 {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; VERTICAL-ALIGN: top
+}
+
+.btn 
+		{
+			display: inline-block;
+			padding: 6px 12px;
+			margin-bottom: 0;
+            font-family: 'Source Sans Pro', sans-serif; 
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 1.42857143;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: middle;
+			-ms-touch-action: manipulation;
+			 touch-action: manipulation;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			 -ms-user-select: none;
+			  user-select: none;
+			background-image: none;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+			.btn:focus,
+			.btn:active:focus,
+			.btn.active:focus,
+			.btn.focus,
+			.btn:active.focus,
+			.btn.active.focus {
+			  outline: thin dotted;
+			  outline: 5px auto -webkit-focus-ring-color;
+			  outline-offset: -2px;
+			}
+			.btn:hover,
+			.btn:focus,
+			.btn.focus {
+			  color: #333;
+			  text-decoration: none;
+			}
+			.btn:active,
+			.btn.active {
+			  background-image: none;
+			  outline: 0;
+			}
+			.btn.disabled,
+			.btn[disabled],
+			fieldset[disabled] .btn {
+			  cursor: not-allowed;
+			  filter: alpha(opacity=65);
+			  opacity: .65;
+			}
+			a.btn.disabled,
+			fieldset[disabled] a.btn {
+			  pointer-events: none;
+			}
+			.btn-default {
+			  color: #333;
+			  background-color: #fff;
+			  border-color: #ccc;
+			}
+			.btn-default:focus,
+			.btn-default.focus {
+			  color: #333;
+			  background-color: #e6e6e6;
+			  border-color: #8c8c8c;
+			}
+			.btn-default:hover {
+			  color: #333;
+			  background-color: #e6e6e6;
+			  border-color: #adadad;
+			}
+			.btn-default:active,
+			.btn-default.active,
+			.open > .dropdown-toggle.btn-default {
+			  color: #333;
+			  background-color: #e6e6e6;
+			  border-color: #adadad;
+			}
+			.btn-default:active:hover,
+			.btn-default.active:hover,
+			.open > .dropdown-toggle.btn-default:hover,
+			.btn-default:active:focus,
+			.btn-default.active:focus,
+			.open > .dropdown-toggle.btn-default:focus,
+			.btn-default:active.focus,
+			.btn-default.active.focus,
+			.open > .dropdown-toggle.btn-default.focus {
+			  color: #333;
+			  background-color: #d4d4d4;
+			  border-color: #8c8c8c;
+			}
+			.btn-default:active,
+			.btn-default.active,
+			.open > .dropdown-toggle.btn-default {
+			  background-image: none;
+			}
+			.btn-default.disabled,
+			.btn-default[disabled],
+			fieldset[disabled] .btn-default,
+			.btn-default.disabled:hover,
+			.btn-default[disabled]:hover,
+			fieldset[disabled] .btn-default:hover,
+			.btn-default.disabled:focus,
+			.btn-default[disabled]:focus,
+			fieldset[disabled] .btn-default:focus,
+			.btn-default.disabled.focus,
+			.btn-default[disabled].focus,
+			fieldset[disabled] .btn-default.focus,
+			.btn-default.disabled:active,
+			.btn-default[disabled]:active,
+			fieldset[disabled] .btn-default:active,
+			.btn-default.disabled.active,
+			.btn-default[disabled].active,
+			fieldset[disabled] .btn-default.active {
+			  background-color: #fff;
+			  border-color: #ccc;
+			}
+			.btn-default .badge {
+			  color: #fff;
+			  background-color: #333;
+			}
+			.btn-info {
+			  color: #fff;
+			  background-color: #5bc0de;
+			  border-color: #46b8da;
+			}
+			.btn-info:focus,
+			.btn-info.focus {
+			  color: #fff;
+			  background-color: #31b0d5;
+			  border-color: #1b6d85;
+			}
+			.btn-info:hover {
+			  color: #fff;
+			  background-color: #31b0d5;
+			  border-color: #269abc;
+			}
+			.btn-info:active,
+			.btn-info.active,
+			.open > .dropdown-toggle.btn-info {
+			  color: #fff;
+			  background-color: #31b0d5;
+			  border-color: #269abc;
+			}
+			.btn-info:active:hover,
+			.btn-info.active:hover,
+			.open > .dropdown-toggle.btn-info:hover,
+			.btn-info:active:focus,
+			.btn-info.active:focus,
+			.open > .dropdown-toggle.btn-info:focus,
+			.btn-info:active.focus,
+			.btn-info.active.focus,
+			.open > .dropdown-toggle.btn-info.focus {
+			  color: #fff;
+			  background-color: #269abc;
+			  border-color: #1b6d85;
+			}
+			.btn-info:active,
+			.btn-info.active,
+			.open > .dropdown-toggle.btn-info {
+			  background-image: none;
+			}
+			.btn-info.disabled,
+			.btn-info[disabled],
+			fieldset[disabled] .btn-info,
+			.btn-info.disabled:hover,
+			.btn-info[disabled]:hover,
+			fieldset[disabled] .btn-info:hover,
+			.btn-info.disabled:focus,
+			.btn-info[disabled]:focus,
+			fieldset[disabled] .btn-info:focus,
+			.btn-info.disabled.focus,
+			.btn-info[disabled].focus,
+			fieldset[disabled] .btn-info.focus,
+			.btn-info.disabled:active,
+			.btn-info[disabled]:active,
+			fieldset[disabled] .btn-info:active,
+			.btn-info.disabled.active,
+			.btn-info[disabled].active,
+			fieldset[disabled] .btn-info.active {
+			  background-color: #5bc0de;
+			  border-color: #46b8da;
+			}
+			.btn-info .badge {
+			  color: #5bc0de;
+			  background-color: #fff;
+			}
+			.text-center{
+			text-align:center !important;
+			}
+
+table {
+    border-spacing: 0;
+}
+
+.table2 tr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #000000;
+    border-image: none;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    color: #000000;
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 8px;
+    font-weight: normal;
+    padding: 7px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 12px;
+  font-family: 'Source Sans Pro', sans-serif; 
+  color: #fff;
+  font-size: 10px;
+  background-color: #0d1835;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #8097a6;
+  background-image: -webkit-linear-gradient(top, #8097a6, #495963);
+  background-image: -moz-linear-gradient(top, #8097a6, #495963);
+  background-image: -ms-linear-gradient(top, #8097a6, #495963);
+  background-image: -o-linear-gradient(top, #8097a6, #495963);
+  background-image: linear-gradient(to bottom, #8097a6, #495963);
+  text-decoration: none;
+  color: white;
+}
+
+.TableRowSalmonFormMini {
+    text-align: center;
+}
+
+.TableRowWhiteMini2 {
+    padding: 1rem 1rem;
+    text-align: center;
+}
+
+
+    </style>
+    <meta content="MSHTML 6.00.3790.4237" name="GENERATOR">
+</head>
+<body leftmargin="8" topmargin="8">
+    <table cellspacing="0" cellpadding="0" width="100%" border="0" hspace="0" vspace="0">
+        <tbody>
+            <!--webbot bot="PurpleText" PREVIEW="APROVACAO CREDITO" -->
+            <div align="center">
+            </div>
+            </TR></tbody></table>
+	<div texte-align="center">
+        <div align="center">
+            <div align="center">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td style="width: 200px; text-align: center; vertical-align: middle; padding: 1rem 1rem;"><img alt="Sistema FIEC" src="sesi-logo.png">
+                                <dl>
+                                    	<font face="verdana" style="font-size: 14pt; color: #0d1835;"><b>Transposição Orçamento nº 003032</b></font>
+										<font face="verdana" style="font-size: 9.5pt; color: #0d1835;">
+											<dt style="padding-top: 0.5rem;"><b> Unidade:</b> 02CE - SESI DEPARTAMENTO REGIONAL</dt>
+											<dt><b>Centro de Custo:</b> GERENCIA DE TEC. DA INFORMACAO - GETIC (08030828)</dt>
+											<dt><b>Solicitante:</b> Edgleice Nascimento (eoliveira@sfiec.org.br)</dt>
+											<dt><b>Aprovador:</b> Tadeu Leandro Vieira Junior (001211)</dt>
+											<dt><b>Tipo de Operação :</b> Transposição</dt>
+										</font>
+                                </dl>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>  
+		
+    <div align="center">
+        <br>
+        <div align="center" style="padding-top: 2rem;">
+            <div class="table2">
+			<table style="width: 85%;" height="60" cellpadding="0" >
+                <tbody>
+                    <tr>
+                        <td class="TableRowSalmonFormMini" align="middle" width="4%" style="background-color: #0d1835; color: white; padding: 1rem 1rem; border-top-left-radius: 10px;" >
+                            <strong>Item</strong>
+                        </td>
+                        <td class="TableRowSalmonFormMini" align="middle" width="7%" height="30" style="background-color: #0d1835; color: white">
+                            <strong>Conta</strong>
+                        </td>
+                        <td class="TableRowSalmonFormMini" align="left" width="20%" height="30" style="background-color: #0d1835; color: white">
+                            <strong>Descrição Conta</strong>
+                        </td>
+                        <td class="TableRowSalmonFormMini" align="middle" width="19%" height="30" style="background-color: #0d1835; color: white">
+                            <strong>UO Destino</strong>
+                        </td>
+                        <td class="TableRowSalmonFormMini" align="middle" width="5%" height="30" style="background-color: #0d1835; color: white">
+                            <strong>Descricao UO</strong>
+                        </td>
+                        <td class="TableRowSalmonFormMini" align="middle" width="8%" height="30" style="background-color: #0d1835; color: white">
+                            <strong>CR</strong>
+                        </td>
+                        <td class="TableRowSalmonFormMini" align="middle" width="8%" height="30" style="background-color: #0d1835; color: white">
+                            <strong>Descricao CR</strong>
+                        </td>
+                        <td class="TableRowSalmonFormMini" align="middle" width="8%" height="30" style="background-color: #0d1835; color: white">
+                            <strong>Tipo</strong>
+                        </td>
+                        <td class="TableRowSalmonFormMini" align="middle" width="8%" height="30" style="background-color: #0d1835; color: white">
+                            <strong>Periodo</strong>
+                        </td>
+                        <td class="TableRowSalmonFormMini" align="middle" width="8%" height="30" style="background-color: #0d1835; color: white; border-top-right-radius: 10px;">
+                            <strong>Vr. Total</strong>
+                        </td>
+                    </tr>
+                    <tbody>
+                        <tr style="padding: 1rem 1rem;">
+                            <td class="TableRowWhiteMini2" align="middle" width="4%" style="vertical-align: middle; ">
+                                001
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="7%" height="22" style="vertical-align: middle">
+                                31010301001         
+                            </td>
+                            <td class="TableRowWhiteMini2" align="left" width="20%" height="22" style="vertical-align: middle">
+                                MATERIAL DE EXPEDIENTE                  
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="19%" height="22" style="vertical-align: middle">
+                                08030828            
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="5%" height="22" style="vertical-align: middle;">
+                                GERENCIA DE TEC. DA INFORMACAO - GETIC  
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                40101030101         
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                TI - GESTAO DA INFORMACAO               
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                Debito
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                <p align="right">
+                                05/08/2021
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                <p align="middle">
+                                        440,00
+                            </td>
+                        </tr>
+                    </tbody>
+
+                        <tr>
+                            <td class="TableRowWhiteMini2" align="middle" width="4%" style="vertical-align: middle">
+                                002
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="7%" height="22" style="vertical-align: middle">
+                                31010304001         
+                            </td>
+                            <td class="TableRowWhiteMini2" align="left" width="20%" height="22" style="vertical-align: middle">
+                                MATERIAL DE COMPUTACAO                  
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="19%" height="22" style="vertical-align: middle">
+                                08030828            
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="5%" height="22" style="vertical-align: middle">
+                                GERENCIA DE TEC. DA INFORMACAO - GETIC  
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                40101030101         
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                TI - GESTAO DA INFORMACAO               
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                Credito
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                <p align="right">
+                                05/08/2021
+                            </td>
+                            <td class="TableRowWhiteMini2" align="middle" width="8%" height="22" style="vertical-align: middle">
+                                <p align="middle">
+                                        440,00
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+			</div>
+            <table border="0" width="100%" bordercolor="#DFEFFF" bordercolorlight="#DFEFFF" bordercolordark="#DFEFFF"
+                bgcolor="#FFFFFF" cellspacing="1">
+                <tr>
+                    <td width="37%" style="font-size: 10pt;padding: 1rem 1rem;" align="right">
+                        <p><b>Total Geral:</b></p>
+                    </td>
+                    <td align="middle" width="10%" style="font-size: 10pt"><strong>440,00</strong></td>
+                </tr>
+            </table>
+            <table>
+                </TBODY></table>
+			            <table align="left">
+		
+				<tr>
+                    <td style="padding: 2rem 1rem 1rem 5rem; width: 100%;">
+                        <p><strong>Justificativa da Solicitação de Transposição : Transposição necessária para compor saldo orçamentário para aprovação de S.A 001549- HD Externo para equipe de Infraestrutura.</strong></p>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tbody>
+                <tr>
+                    <td bgcolor="#e4e4e4" align="center">
+                        <img height="1" src="pic_invis.gif" width="1">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <table align="center" style="width: 30rem; padding: 1rem 2rem;">
+        <form name="FrontPage_Form1" action="http://portalfornecedor.sfiec.org.br:8292/U_PORTALCO.APL" method="post"><input type=hidden name="NUMTO" value="003032">
+<input type=hidden name="FILIAL" value="02CE    ">
+<input type=hidden name="NMFIL" value="SESI DEPARTAMENTO REGIONAL               ">
+<input type=hidden name="DESCCC" value="GERENCIA DE TEC. DA INFORMACAO - GETIC">
+<input type=hidden name="CC" value="08030828            ">
+<input type=hidden name="SOLIC" value="Edgleice Nascimento">
+<input type=hidden name="EMAIL" value="eoliveira@sfiec.org.br">
+<input type=hidden name="APROVADOR" value="Tadeu Leandro Vieira Junior">
+<input type=hidden name="CAPROV" value="001211">
+<input type=hidden name="LINK" value="http://portalfornecedor.sfiec.org.br:8283/workflow/logo/reduzida/SESI_color.jpg">
+<input type=hidden name="TOTGERAL" value="        440,00">
+<input type=hidden name="CHAVE" value="">
+<input type=hidden name="CFILANT" value="">
+<input type=hidden name="WFID" value="">
+<input type=hidden name="NIVEL" value="01">
+<input type=hidden name="WFIDUSER" value="">
+<input type=hidden name="WFMAILID" value="WF00077f9c017e58508d8f">
+<input type=hidden name="WFRECNOTIMEOUT" value="{}">
+<input type=hidden name="WFEMPRESA" value="01">
+<input type=hidden name="WFFILIAL" value="02CE0001">
+<input type=hidden name="TO.CITEM.1" value="001">
+<input type=hidden name="TO.CITEM.2" value="002">
+<input type=hidden name="TO.CCOD.1" value="31010301001         ">
+<input type=hidden name="TO.CCOD.2" value="31010304001         ">
+<input type=hidden name="TO.CDESC.1" value="MATERIAL DE EXPEDIENTE                  ">
+<input type=hidden name="TO.CDESC.2" value="MATERIAL DE COMPUTACAO                  ">
+<input type=hidden name="TO.CUO.1" value="08030828            ">
+<input type=hidden name="TO.CUO.2" value="08030828            ">
+<input type=hidden name="TO.CUODESC.1" value="GERENCIA DE TEC. DA INFORMACAO - GETIC  ">
+<input type=hidden name="TO.CUODESC.2" value="GERENCIA DE TEC. DA INFORMACAO - GETIC  ">
+<input type=hidden name="TO.CCR.1" value="40101030101         ">
+<input type=hidden name="TO.CCR.2" value="40101030101         ">
+<input type=hidden name="TO.DESCCR.1" value="TI - GESTAO DA INFORMACAO               ">
+<input type=hidden name="TO.DESCCR.2" value="TI - GESTAO DA INFORMACAO               ">
+<input type=hidden name="TO.CTIPO.1" value="Debito">
+<input type=hidden name="TO.CTIPO.2" value="Credito">
+<input type=hidden name="TO.CPERIODO.1" value="05/08/2021">
+<input type=hidden name="TO.CPERIODO.2" value="05/08/2021">
+<input type=hidden name="TO.NVRTOTAL.1" value="        440,00">
+<input type=hidden name="TO.NVRTOTAL.2" value="        440,00">
+<input type=hidden name="PROC.NIVEL.1" value="01">
+<input type=hidden name="PROC.NIVEL.2" value="02">
+<input type=hidden name="PROC.CAPOV.1" value="Tadeu Leandro Vieira Junior">
+<input type=hidden name="PROC.CAPOV.2" value="Rubens Bruno Evangelista Gomes">
+<input type=hidden name="PROC.CSIT.1" value="Em Aprovação">
+<input type=hidden name="PROC.CSIT.2" value="Aguardando">
+<input type=hidden name="PROC.DDTLIB.1" value="  /  /    ">
+<input type=hidden name="PROC.DDTLIB.2" value="  /  /    ">
+<input type=hidden name="PROC.COBS.1" value="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ">
+<input type=hidden name="PROC.COBS.2" value="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ">
+
+        <tbody>
+            <tr>
+                <td>
+                    <table height="153">
+                        <tbody>
+                            <td align="middle">
+                                <font face="verdana" size="1">
+                                    <textarea name="OBS" TEMPLATE_name="OBS" rows="4" cols="50" maxlength="254"></textarea>
+                                </font>
+                            </td>
+            </tr>
+            <tr>
+                <td width="80%" height="27" >
+                    <font face="Tahoma">
+                        <input type="hidden" value="" name="CHAVE">
+                        <input type="hidden" value="" name="CFILANT">
+                        <input type="hidden" value="" name="WFID">
+						<input type="hidden" value="01" name="NIVEL">
+						<input type="hidden" value="001211" name="APROV">
+						<input type="hidden" value="        440,00" name="TotalCO">
+						<center>
+                            <label>Senha</label>
+                            <input type="password" name="passwd" required>
+                            <br/><br/>
+                            <input type="hidden" value="" name="WFIDUSER">
+                            <input class="btn" type="submit" value="APROVAR" name="OPC" TEMPLATE_name="B1" onclick value="S" name="OPC">
+                            <input type="hidden" value="" name="WFIDUSER">
+                            <input class="btn" type="submit" value="REPROVAR" name="OPC" TEMPLATE_name="B2" onclick value="N" name="OPC">
+                            <input class="btn" type="submit" value="VOLTAR ALCADA" name="OPC" TEMPLATE_name="B3" onclick value="V" name="OPC">
+	       </center>
+                    </font>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </TD></TR></FORM></TABLE>
+    <div align="center">
+        <table cellpadding="6" width="60%" style="padding-top: 1rem;">
+            <tbody>
+                <tr>
+                    <td style="background-color: #0d1835; color: white;  border-top-left-radius: 10px; border-top-right-radius: 10px;" >
+                        <p align="center">
+                            <font face="verdana" size="2"><b>Histórico de Aprovação</b></font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+		<div class="table2">
+        <table style="width: 60%;" height="58" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td class="TableRowSalmonFormMini" align="middle" width="9%" style="background-color: #0d1835; color: white">
+                        <strong>Nível</strong>
+                    </td>
+                    <td class="TableRowSalmonFormMini" align="middle" width="14%" height="30" style="background-color: #0d1835; color: white">
+                        <strong>Aprovador</strong>
+                    </td>
+                    <td class="TableRowSalmonFormMini" align="left" width="20%" height="30" style="background-color: #0d1835; color: white">
+                        <strong>Situação</strong>
+                    </td>
+                    <td class="TableRowSalmonFormMini" align="left" width="11%" height="30" style="background-color: #0d1835; color: white">
+                        <strong>Dt. Liberação</strong>
+                    </td>
+                    <td class="TableRowSalmonFormMini" align="middle" width="43%" height="30" style="background-color: #0d1835; color: white">
+                        <strong>Observações</strong>
+                    </td>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td class="TableRowWhiteMini2" align="middle" width="9%" style="vertical-align: middle">
+                            01
+                        </td>
+                        <td class="TableRowWhiteMini2" align="middle" width="14%" height="22" style="vertical-align: middle">
+                            Tadeu Leandro Vieira Junior
+                        </td>
+                        <td class="TableRowWhiteMini2" align="left" width="20%" height="22" style="vertical-align: middle">
+                            Em Aprovação
+                        </td>
+                        <td class="TableRowWhiteMini2" align="left" width="11%" height="22" style="vertical-align: middle">
+                              /  /    
+                        </td>
+                        <td class="TableRowWhiteMini2" align="middle" width="43%" height="22" style="vertical-align: middle;">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                        </td>
+                    </tr>
+                </tbody>
+
+                    <tr>
+                        <td class="TableRowWhiteMini2" align="middle" width="9%" style="vertical-align: middle">
+                            02
+                        </td>
+                        <td class="TableRowWhiteMini2" align="middle" width="14%" height="22" style="vertical-align: middle">
+                            Rubens Bruno Evangelista Gomes
+                        </td>
+                        <td class="TableRowWhiteMini2" align="left" width="20%" height="22" style="vertical-align: middle">
+                            Aguardando
+                        </td>
+                        <td class="TableRowWhiteMini2" align="left" width="11%" height="22" style="vertical-align: middle">
+                              /  /    
+                        </td>
+                        <td class="TableRowWhiteMini2" align="middle" width="43%" height="22" style="vertical-align: middle">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+		</div>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tbody>
+                <tr>
+                    <td bgcolor="#e4e4e4" align="center">
+                        <img height="1" src="pic_invis.gif" width="1">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
